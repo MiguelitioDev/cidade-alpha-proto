@@ -1,8 +1,8 @@
 import type { Testimonial } from '../types';
 
 export const agentAuthorityData = {
-  name: 'Marcus Vasconcelos',
-  creci: 'CRECI 18.420-F / CE',
+  name: 'Neemias Benício',
+  creci: 'CRECI 18909F / CE',
   title: 'Corretor Especialista & Morador da Cidade Alpha Ceará',
   headline: 'A autoridade de quem não apenas vende, mas vive o dia a dia da Cidade Alpha.',
   experienceYears: 11,
@@ -10,7 +10,7 @@ export const agentAuthorityData = {
   phone: '(85) 99199-8466',
   whatsappRaw: '5585991998466',
   instagram: 'https://instagram.com/cidadealphaceara.especialista',
-  bio: 'Residente no Alphaville Ceará há mais de 5 anos, Marcus conhece cada rua, topografia, incidência solar dos lotes e o regulamento de obras em detalhes. Sua consultoria vai além da intermediação tradicional: proporciona segurança técnica na escolha do lote com a melhor vista, ventilação e potencial de valorização futura.',
+  bio: 'Residente no Alphaville Ceará há mais de 5 anos, Neemias conhece cada rua, topografia, incidência solar dos lotes e o regulamento construtivo em detalhes. Sua assessoria vai além da intermediação tradicional: proporciona segurança técnica na escolha do lote com a melhor vista, ventilação e potencial de valorização futura.',
   badges: [
     {
       title: '100% dos Lotes Vendidos em 4 Horas',

@@ -36,7 +36,7 @@ export const CommercialLots: Component = () => {
             'min-height': '360px'
           }}>
             <img
-              src="/images/commercial-hub.jpg"
+              src="/images/commercial/alphaville-comercial-hub.jpg"
               alt="Área Comercial Cidade Alpha Ceará"
               loading="lazy"
               style={{

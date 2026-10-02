@@ -1,8 +1,10 @@
+import { createSignal } from 'solid-js';
 import type { Component } from 'solid-js';
 import { locationData } from '../data/locationData';
 import { IconMapPin, IconClock, IconArrowRight } from './Icons';
 
 export const StrategicLocation: Component = () => {
+  const [mapMode, setMapMode] = createSignal<'gps' | 'arterial'>('gps');
   return (
     <section id="localizacao" class="section-padding" style={{ background: '#FFFFFF' }}>
       <div class="container">
@@ -135,14 +137,16 @@ export const StrategicLocation: Component = () => {
             'flex-direction': 'column',
             'min-height': '440px'
           }}>
-            {/* Map Header */}
+            {/* Map Header with View Toggle */}
             <div style={{
               background: '#0B241C',
               color: '#FAF8F5',
-              padding: '14px 20px',
+              padding: '12px 18px',
               display: 'flex',
+              'flex-wrap': 'wrap',
               'justify-content': 'space-between',
-              'align-items': 'center'
+              'align-items': 'center',
+              gap: '10px'
             }}>
               <div style={{ display: 'flex', 'align-items': 'center', gap: '8px' }}>
                 <IconMapPin size={18} color="#E9D29F" />
@@ -150,23 +154,77 @@ export const StrategicLocation: Component = () => {
                   Cidade Alpha Ceará • Eusébio, CE
                 </span>
               </div>
-              <span class="badge-luxury" style={{ 'font-size': '0.7rem', padding: '3px 10px' }}>
-                GPS Ativo
-              </span>
+              <div style={{ display: 'flex', gap: '6px' }}>
+                <button
+                  type="button"
+                  onClick={() => setMapMode('gps')}
+                  style={{
+                    background: mapMode() === 'gps' ? '#CBA258' : 'rgba(255, 255, 255, 0.1)',
+                    color: mapMode() === 'gps' ? '#061510' : '#FAF8F5',
+                    border: 'none',
+                    padding: '4px 10px',
+                    'border-radius': '6px',
+                    'font-size': '0.74rem',
+                    'font-weight': '700',
+                    cursor: 'pointer'
+                  }}
+                >
+                  GPS Google Maps
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMapMode('arterial')}
+                  style={{
+                    background: mapMode() === 'arterial' ? '#CBA258' : 'rgba(255, 255, 255, 0.1)',
+                    color: mapMode() === 'arterial' ? '#061510' : '#FAF8F5',
+                    border: 'none',
+                    padding: '4px 10px',
+                    'border-radius': '6px',
+                    'font-size': '0.74rem',
+                    'font-weight': '700',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Mapa de Acessos Oficial
+                </button>
+              </div>
             </div>
 
-            {/* Google Map Iframe */}
-            <div style={{ flex: '1', width: '100%', 'min-height': '380px' }}>
-              <iframe
-                title="Mapa Cidade Alpha Ceará"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31846.541315573426!2d-38.483163351367184!3d-3.898622100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74ed4a29a007f%3A0xc39f97651a5c68f1!2sAlphaville%20Cear%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0, 'min-height': '380px' }}
-                allowfullscreen={true}
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              />
+            {/* Map Content */}
+            <div style={{ flex: '1', width: '100%', 'min-height': '380px', position: 'relative' }}>
+              {mapMode() === 'gps' ? (
+                <iframe
+                  title="Mapa Cidade Alpha Ceará"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31846.541315573426!2d-38.483163351367184!3d-3.898622100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74ed4a29a007f%3A0xc39f97651a5c68f1!2sAlphaville%20Cear%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, 'min-height': '380px' }}
+                  allowfullscreen={true}
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <div style={{ position: 'relative', width: '100%', height: '100%', 'min-height': '380px', background: '#0F2E23' }}>
+                  <img
+                    src="/images/plans/mapa-localizacao-acessos.jpg"
+                    alt="Mapa Estratégico de Acessos Cidade Alpha Ceará"
+                    style={{ width: '100%', height: '100%', 'min-height': '380px', 'object-fit': 'contain' }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '12px',
+                    left: '12px',
+                    background: 'rgba(6, 21, 16, 0.85)',
+                    padding: '6px 12px',
+                    'border-radius': '6px',
+                    'font-size': '0.74rem',
+                    color: '#E9D29F',
+                    border: '1px solid rgba(203, 162, 88, 0.3)'
+                  }}>
+                    Mapa Oficial de Acessos BR-116 & CE-040 (Alphaville Urbanismo)
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

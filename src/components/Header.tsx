@@ -75,26 +75,40 @@ export const Header: Component = () => {
           gap: '24px'
         }}>
           {/* Brand Logo */}
-          <a href="#" style={{ display: 'flex', 'flex-direction': 'column', 'text-decoration': 'none' }}>
-            <span class="font-luxury" style={{
-              'font-size': '1.35rem',
-              'font-weight': '800',
-              color: '#0B241C',
-              'letter-spacing': '0.08em',
-              'line-height': 1.1
-            }}>
-              CIDADE ALPHA
-            </span>
-            <span style={{
-              'font-size': '0.68rem',
-              'text-transform': 'uppercase',
-              'letter-spacing': '0.18em',
-              color: '#B89244',
-              'font-weight': '700',
-              'margin-top': '2px'
-            }}>
-              CEARÁ • ALPHAVILLE
-            </span>
+          <a href="#" style={{ display: 'flex', 'align-items': 'center', gap: '12px', 'text-decoration': 'none' }}>
+            <img
+              src="/images/brand/site-logo-icon.png"
+              alt="Cidade Alpha Ceará"
+              width="36"
+              height="36"
+              style={{
+                width: '36px',
+                height: 'auto',
+                'object-fit': 'contain',
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))'
+              }}
+            />
+            <div style={{ display: 'flex', 'flex-direction': 'column' }}>
+              <span class="font-luxury" style={{
+                'font-size': '1.35rem',
+                'font-weight': '800',
+                color: '#0B241C',
+                'letter-spacing': '0.08em',
+                'line-height': 1.1
+              }}>
+                CIDADE ALPHA
+              </span>
+              <span style={{
+                'font-size': '0.68rem',
+                'text-transform': 'uppercase',
+                'letter-spacing': '0.18em',
+                color: '#B89244',
+                'font-weight': '700',
+                'margin-top': '2px'
+              }}>
+                CEARÁ • ALPHAVILLE
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation Links */}

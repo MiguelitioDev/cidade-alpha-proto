@@ -23,11 +23,22 @@ export const Footer: Component = () => {
           
           {/* Column 1: Brand Info */}
           <div>
-            <div class="font-luxury" style={{ 'font-size': '1.5rem', 'font-weight': '800', color: '#FFFFFF', 'margin-bottom': '4px' }}>
-              CIDADE ALPHA
-            </div>
-            <div style={{ 'font-size': '0.72rem', 'letter-spacing': '0.18em', color: '#CBA258', 'font-weight': '700', 'margin-bottom': '16px', 'text-transform': 'uppercase' }}>
-              Ceará • Alphaville & Terras
+            <div style={{ display: 'flex', 'align-items': 'center', gap: '12px', 'margin-bottom': '12px' }}>
+              <img
+                src="/images/brand/site-logo-icon.png"
+                alt="Cidade Alpha Ceará"
+                width="34"
+                height="34"
+                style={{ width: '34px', height: 'auto', filter: 'brightness(1.2)' }}
+              />
+              <div>
+                <div class="font-luxury" style={{ 'font-size': '1.35rem', 'font-weight': '800', color: '#FFFFFF', 'line-height': 1.1 }}>
+                  CIDADE ALPHA
+                </div>
+                <div style={{ 'font-size': '0.68rem', 'letter-spacing': '0.18em', color: '#CBA258', 'font-weight': '700', 'text-transform': 'uppercase' }}>
+                  Ceará • Alphaville & Terras
+                </div>
+              </div>
             </div>
             <p style={{ 'font-size': '0.88rem', color: '#B3C2BC', 'line-height': 1.6, 'margin-bottom': '20px' }}>
               Venda e consultoria especializada de lotes residenciais (275m² a 450m²) e comerciais (500m² a 8.000m²) 
@@ -188,7 +199,7 @@ export const Footer: Component = () => {
           'padding-top': '20px'
         }}>
           <div>
-            © {new Date().getFullYear()} Cidade Alpha Ceará - Todos os direitos reservados. CRECI 18.420-F / CE.
+            © {new Date().getFullYear()} Cidade Alpha Ceará - Todos os direitos reservados. CRECI 18909F / CRECI 18.420-F • CE.
           </div>
           <div>
             Desenvolvido com foco em alta conversão imobiliária • Padrão Alphaville Ceará.

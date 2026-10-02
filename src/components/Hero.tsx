@@ -17,7 +17,7 @@ export const Hero: Component = () => {
       <div style={{
         position: 'absolute',
         inset: 0,
-        'background-image': "linear-gradient(180deg, rgba(6, 21, 16, 0.78) 0%, rgba(11, 36, 28, 0.85) 60%, rgba(9, 28, 22, 0.96) 100%), url('/images/hero-aerial.jpg')",
+        'background-image': "linear-gradient(180deg, rgba(6, 21, 16, 0.78) 0%, rgba(11, 36, 28, 0.85) 60%, rgba(9, 28, 22, 0.96) 100%), url('/images/hero/cidade-alpha-panoramic-hero.jpg')",
         'background-size': 'cover',
         'background-position': 'center 35%',
         'z-index': 1
